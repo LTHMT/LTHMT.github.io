@@ -5,6 +5,7 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 ### 1. HTML 基本结构
 每个 HTML 文件通常有一个基本结构，包含 `html`、`head` 和 `body` 标签：
 
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +19,32 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 </body>
 </html>
 ```
+
+-  **`<head>` 标签**
+    - **主要作用**：包含网页的元数据（metadata）和其他设置信息，这些内容不会直接显示在网页中。
+    - **常见内容**：
+      - **文档标题**：通过 `<title>` 标签设置，显示在浏览器标签上。
+      - **字符编码**：通过 `<meta charset="UTF-8">` 指定，确保网页支持多种语言和字符。
+      - **描述和关键词**：通过 `<meta name="description">` 和 `<meta name="keywords">` 提供，帮助搜索引擎理解网页内容。
+      - **视图设置**：通过 `<meta name="viewport">` 设置页面在移动设备上的显示方式。
+      - **样式表和脚本**：使用 `<link>` 引用外部CSS文件，或使用 `<style>` 添加内部CSS样式，影响网页的样式；使用 `<script>` 引用外部JavaScript文件或编写内部JavaScript，添加交互功能。
+
+    **总结**：`<head>` 部分为网页提供信息、设置和资源链接，影响页面的外观和功能，但其内容不会直接显示在页面中。
+---
+-  **`<body>` 标签**
+    - **主要作用**：包含网页的可见内容，即用户在浏览器中直接看到的页面内容。
+    - **常见内容**：
+      - **文本和图像**：使用 `<p>`、`<h1>` 到 `<h6>`、`<img>` 等标签添加文字和图片。
+      - **布局**：使用 `<div>` 和 `<section>` 等标签进行页面布局和内容分区。
+      - **交互元素**：包括按钮、表单等，通过 `<button>`、`<form>` 等标签添加用户可操作的元素。
+      - **嵌入多媒体**：通过 `<video>`、`<audio>`、`<iframe>` 等标签嵌入视频、音频和其他外部内容。
+
+    **总结**：`<body>` 部分承载网页的实际内容和交互元素，是用户在浏览器中直接看到和操作的页面内容。
+
+- 两者的关系
+  - **结构关系**：`<head>` 提供网页的配置信息和资源支持，为 `<body>` 部分提供样式、脚本、描述等设置。
+  - **相互依赖**：`<head>` 影响页面在浏览器中的呈现方式，而 `<body>` 则是承载具体内容。两者共同作用构成了完整的网页结构。
+
 
 ### 2. 标题标签
 使用 `<h1>` 到 `<h6>` 标签来定义标题，`<h1>` 是最大的标题，`<h6>` 是最小的标题。
@@ -49,8 +76,65 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 ```html
 <img src="image.jpg" alt="图片描述">
 ```
+在HTML中，可以通过不同的标签嵌入视频和文件。以下是一些常见的嵌入方法：
 
-### 6. 列表
+### 6. 嵌入视频
+
+#### 使用 `<video>` 标签
+可以直接在HTML中使用 `<video>` 标签嵌入本地视频或在线视频文件：
+```html
+<video controls width="600">
+  <source src="path/to/your-video.mp4" type="video/mp4"> <!-- MP4视频文件 -->
+  <source src="path/to/your-video.ogg" type="video/ogg"> <!-- OGG格式视频文件 -->
+  您的浏览器不支持HTML视频播放。
+</video>
+```
+- `controls` 属性：显示播放控件（播放/暂停、音量、全屏等）。
+- `width` 属性：设置视频显示宽度。
+- `<source>`：定义视频文件的路径和类型。可以设置多个 `<source>` 标签来支持不同格式。
+
+#### 使用嵌入YouTube视频的 `<iframe>` 标签
+如果视频在YouTube上，可以使用 `<iframe>` 嵌入：
+```html
+<iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/your_video_id" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+</iframe>
+```
+- `src`：将 `your_video_id` 替换为YouTube视频的ID。
+- `width` 和 `height`：定义视频显示尺寸。
+- `allowfullscreen`：允许全屏播放。
+
+### 7. 嵌入文件
+
+#### 使用 `<iframe>` 嵌入文件
+可以使用 `<iframe>` 显示PDF文件、HTML文件或其他网页内容：
+```html
+<iframe src="path/to/your-file.pdf" width="600" height="500" title="PDF Viewer"></iframe>
+```
+- `src`：设置文件的路径（例如PDF文件）。
+- `width` 和 `height`：设置显示区域的大小。
+
+#### 使用 `<embed>` 标签嵌入文件
+`<embed>` 标签也可以用于嵌入PDF文件或其他文档：
+```html
+<embed src="path/to/your-file.pdf" width="600" height="500" type="application/pdf">
+```
+- `src`：指定文件路径。
+- `type`：定义文件类型，例如PDF文件使用 `application/pdf`。
+
+#### 使用 `<a>` 标签下载文件
+可以使用链接直接提供文件的下载：
+```html
+<a href="path/to/your-file.pdf" download="filename.pdf">下载PDF文件</a>
+```
+- `href`：指定文件路径。
+- `download`：设置下载文件的默认名称（可选）。
+
+### 8. 列表
 #### 无序列表
 使用 `<ul>` 和 `<li>` 标签创建无序列表。
 
@@ -73,7 +157,7 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 </ol>
 ```
 
-### 7. 表格
+### 9. 表格
 使用 `<table>`、`<tr>`、`<td>` 和 `<th>` 标签创建表格。
 
 ```html
@@ -93,7 +177,7 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 </table>
 ```
 
-### 8. 表单
+### 10. 表单
 使用 `<form>` 标签创建表单，包含 `<input>`、`<label>`、`<button>` 等标签。
 
 ```html
@@ -108,7 +192,7 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 </form>
 ```
 
-### 9. 分割线
+### 11. 分割线
 使用 `<hr>` 标签创建水平分割线。
 
 ```html
@@ -117,7 +201,7 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 <p>这是第二段。</p>
 ```
 
-### 10. 注释
+### 12. 注释
 使用 `<!-- ... -->` 来添加注释，注释内容不会显示在网页上。
 
 ```html
@@ -125,7 +209,7 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 <p>这是一个段落。</p>
 ```
 
-### 11. 强调和斜体
+### 13. 强调和斜体
 使用 `<strong>` 或 `<b>` 标签使文本加粗，使用 `<em>` 或 `<i>` 标签使文本斜体。
 
 ```html
@@ -140,7 +224,7 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 <p style="color: blue; font-size: 20px;">这是蓝色的文字。</p>
 ```
 
-### 13. 内部和外部样式
+### 14. 内部和外部样式
 HTML 支持使用 `<style>` 标签添加内部样式，或使用 `<link>` 标签引用外部样式表。
 
 #### 内部样式
@@ -160,7 +244,7 @@ HTML 支持使用 `<style>` 标签添加内部样式，或使用 `<link>` 标签
 <link rel="stylesheet" href="styles.css">
 ```
 
-### 14. JavaScript 脚本
+### 15. JavaScript 脚本
 使用 `<script>` 标签添加 JavaScript 脚本，可以直接嵌入或引用外部脚本文件。
 
 #### 内联 JavaScript
@@ -173,6 +257,48 @@ HTML 支持使用 `<style>` 标签添加内部样式，或使用 `<link>` 标签
 #### 外部 JavaScript
 ```html
 <script src="script.js"></script>
+```
+
+### 16.HTML实例
+```html
+<html lang="en"> <!-- 声明HTML文档的语言为英文 -->
+<head>
+  <meta charset="UTF-8"> <!-- 设置文档字符编码为UTF-8，确保兼容大部分语言和符号 -->
+  <title>Document</title> <!-- 设置网页的标题，在浏览器标签中显示 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <!-- 启用IE的最新渲染模式，并兼容Chrome Frame -->
+  <meta name="description" content="Description"> <!-- 设置网页描述内容，有助于SEO优化 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"> <!-- 为移动设备优化视图设置，确保页面在不同屏幕尺寸下自适应 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"> <!-- 引用Docsify的Vue风格主题CSS文件，使文档页面具有Vue主题的样式 -->
+</head>
+
+<body>
+  <div id="app"></div> <!-- 页面内容的容器，通过Docsify来渲染文档内容 -->
+
+  <!-- 配置Docsify选项 -->
+  <script>
+    window.$docsify = {
+      name: '',                  // 设置文档项目的名称，将显示在页面顶部导航栏（这里为空）
+      repo: '',                  // 设置项目的GitHub仓库地址，导航栏中会出现一个跳转按钮（这里为空）
+      loadSidebar: true,         // 启用侧边栏（通常由_sidebar.md生成）
+      subMaxLevel: 3,            // 指定显示的侧边栏标题层级（设置为3级）
+      loadNavbar: true,          // 启用顶栏（通常由_navbar.md生成）
+      coverpage: true,           // 启用封面页
+      onlyCover: true            // 如果为true，初次加载时只显示封面页内容
+    }
+  </script>
+
+  <!-- 引入Docsify库 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script> <!-- 引入Docsify库的JavaScript文件，使页面成为Docsify应用 -->
+
+  <!-- 引入KaTeX库及依赖，用于渲染数学公式 -->
+  <script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script> <!-- 引入KaTeX库 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" /> <!-- 引入KaTeX的CSS文件 -->
+  <script src="//cdn.jsdelivr.net/npm/marked@4"></script> <!-- 引入Marked库，将Markdown转换为HTML -->
+  
+  <!-- 引入docsify-katex插件，支持Docsify中渲染数学公式 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+</body>
+</html>
 ```
 
 ### 总结
