@@ -18,18 +18,34 @@
   <!-- 配置Docsify选项 -->
   <script>
     window.$docsify = {
-      name: '',                  // 设置文档项目的名称，将显示在页面顶部导航栏（这里为空）
+      name: '个人知识库',                  // 设置文档项目的名称，将显示在页面顶部导航栏（这里为空）
       repo: '',                  // 设置项目的GitHub仓库地址，导航栏中会出现一个跳转按钮（这里为空）
-      loadSidebar: true,         // 启用侧边栏（通常由_sidebar.md生成）
+      auto2top: true,
       subMaxLevel: 3,            // 指定显示的侧边栏标题层级（设置为3级）
+      // maxLevel: 4,
+      // hideSidebar: true,
+      mergeNavbar: true,
+      loadSidebar: true,         // 启用侧边栏（通常由_sidebar.md生成）
+      // alias: {
+      //   '/.*/_sidebar.md': '/_sidebar.md'},
       loadNavbar: true,          // 启用顶栏（通常由_navbar.md生成）
       coverpage: true,           // 启用封面页
-      onlyCover: true            // 如果为true，初次加载时只显示封面页内容
+      onlyCover: true,            // 如果为true，初次加载时只显示封面页内容
+      autoHeader: true,           // 自动为每个页面增加标题
+      sidebarCollapse: {
+        collapse: true,       // 默认折叠所有小节
+        recursive: true,      // 递归折叠所有子级
+      }
+
     }
   </script>
 
   <!-- 引入Docsify库 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script> <!-- 引入Docsify库的JavaScript文件，使页面成为Docsify应用 -->
+
+  
+  <!-- 确保 Docsify 侧边栏折叠插件在 Docsify 主脚本之后加载 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse@latest/dist/docsify-sidebar-collapse.min.js"></script> 
 
   <!-- 引入KaTeX库及依赖，用于渲染数学公式 -->
   <script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script> <!-- 引入KaTeX库 -->
