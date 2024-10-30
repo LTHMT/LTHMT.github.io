@@ -189,3 +189,64 @@ ___
 这是第二行，仍在同一段落。
 ```
 
+### 16.markdown常用格式
+```
+<!-- 第一个大标题应为"guide.md"中的guide,在导航栏中不显示 -->
+# Guide
+
+<!-- 不在导航栏显示该标题 -->
+# guide {docsify-ignore}
+
+## Header
+
+### GUIDE3
+
+<!-- 重要提示 -->
+!> **Time** is money, my friend!
+
+<!-- 一般提示 -->
+?> _TODO_ unit test
+
+TODO unit test
+
+<!-- 
+:ignore -> 忽略格式
+:target=_blank -> 在新窗口打开
+:target=_self  -> 更新本窗口的显示页内容
+ -->
+[link](/demo/)  
+[link](/demo/ ':ignore')  
+[link](/demo ':target=_blank')  
+[link](/demo2 ':target=_self')  
+
+<!-- 
+- [ ] 注意有空格，没打勾
+- [×] 显示打勾
+ -->
+- [ ] foo
+- bar
+- [x] baz
+- [ ] bam <~ not working
+  - [ ] bim
+  - [ ] lim
+
+<!-- 设置格式大小 【':size=50x100'】-->
+![logo](https://docsify.js.org/_media/icon.svg ':size=50x100')
+![logo](https://docsify.js.org/_media/icon.svg )
+
+<!-- 设置id -->
+### 你好，世界！ :id=hello-world
+
+<!-- 下拉举例 -->
+<details>
+<summary>Self-assessment (Click to expand)</summary>
+
+- Abc
+- Abc
+
+</details>
+
+<!-- emoji举例 -->
+:100:
+```
+![alt text](_media_其他笔记/markdown常用格式.png)

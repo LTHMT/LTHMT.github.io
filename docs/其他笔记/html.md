@@ -1,7 +1,7 @@
 
 HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML 使用标签（tag）来定义页面内容的结构，比如标题、段落、列表、图片、链接等。以下是一些常用的 HTML 标签和语句。
 
-### 1. HTML 基本结构
+## HTML 基本结构
 每个 HTML 文件通常有一个基本结构，包含 `html`、`head` 和 `body` 标签：
 
 
@@ -44,8 +44,8 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
   - **结构关系**：`<head>` 提供网页的配置信息和资源支持，为 `<body>` 部分提供样式、脚本、描述等设置。
   - **相互依赖**：`<head>` 影响页面在浏览器中的呈现方式，而 `<body>` 则是承载具体内容。两者共同作用构成了完整的网页结构。
 
-
-### 2. 标题标签
+## 标签
+### 1. 标题标签
 使用 `<h1>` 到 `<h6>` 标签来定义标题，`<h1>` 是最大的标题，`<h6>` 是最小的标题。
 
 ```html
@@ -54,22 +54,22 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 <h3>这是三级标题</h3>
 ```
 
-### 3. 段落标签
+### 2. 段落标签
 使用 `<p>` 标签定义段落。
 
 ```html
 <p>这是一个段落。</p>
 <p>这是另一个段落。</p>
 ```
-
-### 4. 链接
+## 嵌入
+### 1. 链接
 使用 `<a>` 标签创建超链接，`href` 属性指定链接目标。
 
 ```html
 <a href="https://www.example.com">访问 Example 网站</a>
 ```
 
-### 5. 图片
+### 2. 图片
 使用 `<img>` 标签插入图片，`src` 属性指定图片 URL，`alt` 属性用于描述图片。
 
 ```html
@@ -77,7 +77,7 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 ```
 在HTML中，可以通过不同的标签嵌入视频和文件。以下是一些常见的嵌入方法：
 
-### 6. 嵌入视频
+### 3. 嵌入视频
 
 #### 使用 `<video>` 标签
 可以直接在HTML中使用 `<video>` 标签嵌入本地视频或在线视频文件：
@@ -107,7 +107,7 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 - `width` 和 `height`：定义视频显示尺寸。
 - `allowfullscreen`：允许全屏播放。
 
-### 7. 嵌入文件
+### 4. 嵌入文件
 
 #### 使用 `<iframe>` 嵌入文件
 可以使用 `<iframe>` 显示PDF文件、HTML文件或其他网页内容：
@@ -133,8 +133,8 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 - `href`：指定文件路径。
 - `download`：设置下载文件的默认名称（可选）。
 
-### 8. 列表
-#### 无序列表
+## 列表和表格
+### 1.无序列表
 使用 `<ul>` 和 `<li>` 标签创建无序列表。
 
 ```html
@@ -145,7 +145,7 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 </ul>
 ```
 
-#### 有序列表
+### 2.有序列表
 使用 `<ol>` 和 `<li>` 标签创建有序列表。
 
 ```html
@@ -156,7 +156,7 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 </ol>
 ```
 
-### 9. 表格
+### 3.表格
 使用 `<table>`、`<tr>`、`<td>` 和 `<th>` 标签创建表格。
 
 ```html
@@ -176,7 +176,7 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 </table>
 ```
 
-### 10. 表单
+### 4. 表单
 使用 `<form>` 标签创建表单，包含 `<input>`、`<label>`、`<button>` 等标签。
 
 ```html
@@ -191,7 +191,7 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 </form>
 ```
 
-### 11. 分割线
+## 分割线
 使用 `<hr>` 标签创建水平分割线。
 
 ```html
@@ -199,8 +199,8 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 <hr>
 <p>这是第二段。</p>
 ```
-
-### 12. 注释
+## 注释、强调与文字颜色
+### 1. 注释
 使用 `<!-- ... -->` 来添加注释，注释内容不会显示在网页上。
 
 ```html
@@ -208,22 +208,31 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 <p>这是一个段落。</p>
 ```
 
-### 13. 强调和斜体
+### 2. 强调和斜体、文字颜色、样式
 使用 `<strong>` 或 `<b>` 标签使文本加粗，使用 `<em>` 或 `<i>` 标签使文本斜体。
 
 ```html
 <p>这是 <strong>加粗</strong> 的文字。</p>
 <p>这是 <em>斜体</em> 的文字。</p>
-```
 
-### 12. 内联样式
+<font color="blue">文字</font>  
+<span style="color: orange;">文字</span>
+
+<div style="text-align: center;">
+  这是居中的文字
+</div>
+
+
+```
+## 样式
+### 1. 内联样式
 使用 `style` 属性为标签添加内联样式。
 
 ```html
 <p style="color: blue; font-size: 20px;">这是蓝色的文字。</p>
 ```
 
-### 14. 内部和外部样式
+### 2. 内部和外部样式
 HTML 支持使用 `<style>` 标签添加内部样式，或使用 `<link>` 标签引用外部样式表。
 
 #### 内部样式
@@ -242,8 +251,8 @@ HTML 支持使用 `<style>` 标签添加内部样式，或使用 `<link>` 标签
 ```html
 <link rel="stylesheet" href="styles.css">
 ```
-
-### 15. JavaScript 脚本
+## 脚本
+### JavaScript 脚本
 使用 `<script>` 标签添加 JavaScript 脚本，可以直接嵌入或引用外部脚本文件。
 
 #### 内联 JavaScript
@@ -258,7 +267,7 @@ HTML 支持使用 `<style>` 标签添加内部样式，或使用 `<link>` 标签
 <script src="script.js"></script>
 ```
 
-### 16.HTML实例
+## HTML实例
 ```html
 <html lang="en"> <!-- 声明HTML文档的语言为英文 -->
 <head>
@@ -300,5 +309,131 @@ HTML 支持使用 `<style>` 标签添加内部样式，或使用 `<link>` 标签
 </html>
 ```
 
+在 HTML 中，文字的排版方式有多种，可以通过 HTML 标签和 CSS 样式来控制。以下是常用的文字排版方式：
+
+## 文字排版方式
+### 1. **对齐方式**
+
+通过 CSS 的 `text-align` 属性可以实现文字的对齐方式：
+
+- **左对齐**（默认）：`text-align: left;`
+- **右对齐**：`text-align: right;`
+- **居中对齐**：`text-align: center;`
+- **两端对齐**：`text-align: justify;`
+
+示例：
+
+```html
+<p style="text-align: center;">居中的文字</p>
+```
+
+### 2. **字体样式**
+
+使用 CSS 的 `font-family`、`font-size`、`font-weight` 和 `font-style` 等属性设置字体样式：
+
+- **字体**：`font-family: Arial, sans-serif;`
+- **字体大小**：`font-size: 16px;`
+- **加粗**：`font-weight: bold;`
+- **斜体**：`font-style: italic;`
+
+示例：
+
+```html
+<p style="font-family: Arial; font-size: 18px; font-weight: bold; font-style: italic;">
+  这是设置了字体样式的文字
+</p>
+```
+
+### 3. **行高和字间距**
+
+- **行高**：`line-height` 用于控制行间距，一般设置为 1.5 或 1.6。
+- **字间距**：`letter-spacing` 用于控制字符之间的间距。
+- **单词间距**：`word-spacing` 用于控制单词之间的间距。
+
+示例：
+
+```html
+<p style="line-height: 1.5; letter-spacing: 1px; word-spacing: 2px;">
+  设置行高、字间距和单词间距的文字
+</p>
+```
+
+### 4. **文本装饰**
+
+通过 `text-decoration` 属性，可以对文字添加下划线、删除线或上划线：
+
+- **下划线**：`text-decoration: underline;`
+- **删除线**：`text-decoration: line-through;`
+- **上划线**：`text-decoration: overline;`
+
+示例：
+
+```html
+<p style="text-decoration: underline;">下划线文字</p>
+<p style="text-decoration: line-through;">删除线文字</p>
+```
+
+### 5. **文本缩进**
+
+可以使用 `text-indent` 设置段落的首行缩进：
+
+- **首行缩进**：`text-indent: 2em;`
+
+```html
+<p style="text-indent: 2em;">
+  这是带有首行缩进的段落。
+</p>
+```
+
+### 6. **文字颜色**
+
+使用 `color` 属性设置文字颜色，可以使用色名、十六进制颜色值或 RGB 值：
+
+```html
+<p style="color: #ff5733;">带有颜色的文字</p>
+```
+
+### 7. **文字转换**
+
+使用 `text-transform` 控制文字的大小写：
+
+- **全部大写**：`text-transform: uppercase;`
+- **全部小写**：`text-transform: lowercase;`
+- **首字母大写**：`text-transform: capitalize;`
+
+```html
+<p style="text-transform: uppercase;">全部大写的文字</p>
+```
+
+### 8. **换行和空白控制**
+
+使用 `white-space` 控制文本换行和空白：
+
+- **自动换行**：`white-space: normal;`
+- **不换行**：`white-space: nowrap;`
+- **保留空格和换行**：`white-space: pre;`
+
+```html
+<p style="white-space: pre;">
+  这是     带有多重空格和换行的文本。
+</p>
+```
+
+### 9. **浮动和悬挂**
+
+在布局中使用 `float` 和 `position` 实现文字的浮动效果或悬挂效果。
+
+- **浮动**：`float: left;` 或 `float: right;` 用于文字环绕图像。
+- **悬挂**：利用 `position: relative;` 和 `position: absolute;` 可以实现悬挂样式。
+
+### 综合示例
+
+```html
+<p style="text-align: justify; font-family: Arial; font-size: 16px; line-height: 1.6; color: #333; text-indent: 2em;">
+  这是一个综合排版示例，包含了左对齐、行高、颜色和首行缩进的样式。
+</p>
+```
+
+通过这些排版方式，可以灵活调整文字的显示效果，使网页内容更加清晰美观。
 ### 总结
 以上是常见的 HTML 语句和标签，通过这些基本的标签，可以构建出简单的网页。HTML 与 CSS、JavaScript 结合使用可以制作更加复杂和交互性强的网页。
