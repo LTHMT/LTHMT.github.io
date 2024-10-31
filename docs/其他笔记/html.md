@@ -230,6 +230,8 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 
 ```html
 <p style="color: blue; font-size: 20px;">这是蓝色的文字。</p>
+<summary style="display: inline; color: red;">甘特图>><span></summary>
+<!-- display:inline在summary里会取消展开箭头，并且行内元素不会强制换行 -->
 ```
 
 ### 2. 内部和外部样式

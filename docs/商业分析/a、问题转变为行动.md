@@ -11,7 +11,7 @@
 - 2.问题界定的特点（SMART原则）
 
     <details>
-    <summary>图片示例 >></summary>
+    <summary><span style="color: orange;">SMART原则>></summary>
 
     - ![alt text](_media_商业分析/问题转变为行动/问题界定的特点1.png)
     - ![alt text](_media_商业分析/问题转变为行动/问题界定的特点2.png )
@@ -22,7 +22,7 @@
 - 3.使用议题树分解问题
 
     <details>
-    <summary>图片示例 >></summary>
+    <summary><span style="color: orange;">议题树>></summary>
 
     ![alt text](_media_商业分析/问题转变为行动/议题书分解问题1.png ":size=50%")  
 
@@ -57,9 +57,15 @@
 
 - 4.制定有限的排序标准（影响、紧急程度、实施难度、风险）
 
+    <details>
+
+    <summary><span style="color: orange;">去除不重要的课题>></span></summary>
+
     ![alt text](_media_商业分析/问题转变为行动/去除不重要的问题1.png)
 
     ![alt text](_media_商业分析/问题转变为行动/去除不重要的问题2.png)
+
+    </details>
  
 ### iv.	制定详细的工作计划，收集数据
 
@@ -68,10 +74,13 @@
 - 2.	对现有工作人员进行调研评估
         
 - 3.	可以使用甘特图
-    
+    <details>
+    <summary style=" color: orange;">甘特图>><span></summary>
+
     ![alt text](_media_商业分析/问题转变为行动/制定详细的工作计划1.png)
 
     ![alt text](_media_商业分析/问题转变为行动/制定详细的工作计划2.png)
+    </details>
  
 ### v.	分析重要议题
 
@@ -97,40 +106,41 @@
 
 
 ## 进行高效简洁的信息收集
-### b)	咨询公司常见信息搜集整理方法对比
+### a)	咨询公司常见信息搜集整理方法对比
 
-<details>
-<summary>整理方法对比 >></summary>
- 
-![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比1.png)
+- ![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比1.png)
 
-![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比2.png)
- 
-![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比3.png)
-![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比4.png) 
-![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比5.png) 
-![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比6.png)
-![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比7.png)
-![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比8.png)
-![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比9.png)
-![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比10.png)
-![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比11.png)
-![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比12.png)
-![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比13.png)
-![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比14.png)
-![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比15.png)
-</details>
- 
- 
- 
- 
- 
- 
-c)	案例
- 
- 
- 
- 
- 
- 
- 
+    <details>
+    <summary style=" color: orange;">整理方法详细对比 >></summary>
+    
+    ![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比2.png)
+    ![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比3.png)
+    ![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比4.png) 
+    ![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比5.png) 
+    ![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比6.png)
+    ![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比7.png)
+    ![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比8.png)
+    ![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比9.png)
+    ![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比10.png)
+    ![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比11.png)
+    ![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比12.png)
+    ![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比13.png)
+    ![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比14.png)
+    ![alt text](_media_商业分析/问题转变为行动/咨询公司常见信息搜集整理方法对比15.png)
+    </details>
+
+### b)	案例
+- ![alt text](_media_商业分析/问题转变为行动/案例1.png)
+
+    <details>
+    <summary style=" color: orange;">具体案例 >></summary>
+
+
+    ![alt text](_media_商业分析/问题转变为行动/案例2.png)
+    ![alt text](_media_商业分析/问题转变为行动/案例3.png) 
+    ![alt text](_media_商业分析/问题转变为行动/案例4.png) 
+    ![alt text](_media_商业分析/问题转变为行动/案例5.png) 
+    ![alt text](_media_商业分析/问题转变为行动/案例6.png) 
+    ![alt text](_media_商业分析/问题转变为行动/案例7.png) 
+    
+    </details>

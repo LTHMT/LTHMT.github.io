@@ -19,6 +19,12 @@
     h4 { font-size: 0.5em; }
     /* 其他自定义样式 */
   </style>
+  <style>
+    :root {
+      --docsifytabs-border-color: #ededed;
+      --docsifytabs-tab-highlight-color: purple;
+    }
+  </style>
 </head>
 
 <body>
@@ -61,7 +67,16 @@
         // // 您可以提供一个正则表达式来匹配前缀。在这种情况下，
         // // 匹配到的字符串将被用来识别索引
         // pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/
+      },
+
+      tabs: {
+        persist: true, // default
+        sync: true, // default
+        theme: 'classic', // default
+        tabComments: true, // default
+        tabHeadings: true // default
       }
+      
 
   };
 </script>
@@ -90,6 +105,7 @@
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
 
-
+  <!-- docsify-tabs (latest v1.x.x) -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
 </body>
 </html>
