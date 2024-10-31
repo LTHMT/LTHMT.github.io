@@ -12,23 +12,87 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"> <!-- 引用Docsify的Vue风格主题CSS文件，使文档页面具有Vue主题的样式 -->
 
   <style>
-    /* 设置各级标题字体大小 */
-    h1 { font-size: 1.5em; }
-    h2 { font-size: 1em; }
-    h3 { font-size: 0.75em; }
-    h4 { font-size: 0.5em; }
-    /* 其他自定义样式 */
-  </style>
-  <style>
     :root {
       --docsifytabs-border-color: #ededed;
       --docsifytabs-tab-highlight-color: purple;
     }
   </style>
+  <style>
+    /* 固定播放器在顶部 */
+    #music-player {
+        position: fixed;
+        bottom: 0;
+        right: 10px;
+        width: 14%;
+        background: #f3f3f3;
+        padding: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 9999;
+    }
+    /* 为了避免播放器遮挡内容，增加页面顶部内边距 */
+    #app {
+        padding-bottom: 50px; /* 根据播放器高度调整 */
+    }
+    #song-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    }
+</style>
 </head>
 
 <body>
-  <div id="app"></div> <!-- 页面内容的容器，通过Docsify来渲染文档内容 -->
+  <div id="app"></div> <!-- 页面内容容器，通过Docsify渲染文档内容 -->
+
+  <!-- 页面音乐播放器 -->
+  <div id="music-player">
+      <span id="song-title">黎瑞恩 - 多情</span> <!-- 歌名显示 -->
+      <audio id="audio-player" controls>        <!--<audio id="audio-player" controls autoplay（默认自动播放） ></audio>-->
+          <source src="/_media/黎瑞恩-多情.mp3" type="audio/mpeg">
+          您的浏览器不支持音频元素。
+      </audio>
+  </div>
+
+  <script>
+      // 定义播放列表
+      const playlist = [
+          
+          { title: "Kenny G - Going home", src: "/_media/Kenny G - Going home.mp3" },
+          { title: "Sweet Hearts - I've never been to me", src: "/_media/Sweet Hearts - I've never been to me.mp3" },
+          { title: "Teddy Thompson - I Don't Want To Say Goodbye", src: "/_media/Teddy Thompson - I Don't Want To Say Goodbye.mp3" },
+          { title: "Danny Elfman - Will Hunting [Main Titles]", src: "/_media/Danny Elfman - Will Hunting [Main Titles].mp3" },
+          { title: "岩井俊二 - Fish In The Pool", src: "/_media/岩井俊二 - Fish In The Pool.mp3" },
+          { title: "岩井俊二 - ウヲアイニ(我爱你)", src: "/_media/岩井俊二 - ウヲアイニ(我爱你).mp3" },
+          { title: "田中公平 - 见上げた空の爽やかさ", src: "/_media/田中公平 - 见上げた空の爽やかさ.mp3" },
+          { title: "群星 - Reason", src: "/_media/群星 - Reason.mp3" },
+          { title: "群星 - 祈祷", src: "/_media/群星 - 祈祷.mp3" },
+          { title: "情书 - 主题曲", src: "/_media/情书 - 主题曲.mp3" },
+          { title: "黎瑞恩 - 多情", src: "/_media/黎瑞恩-多情.mp3" },
+          { title: "叶倩文 - 伤逝", src: "/_media/叶倩文-伤逝.mp3" }
+      ];
+
+      let currentTrack = 0; // 当前播放的歌曲索引
+      const audioPlayer = document.getElementById("audio-player");
+      const songTitle = document.getElementById("song-title");
+
+      // 更新音频源和标题
+      function loadTrack(index) {
+          audioPlayer.src = playlist[index].src;
+          songTitle.textContent = playlist[index].title;
+          audioPlayer.play();
+      }
+
+      // 监听歌曲结束事件，切换到下一首歌
+      audioPlayer.addEventListener("ended", () => {
+          currentTrack = (currentTrack + 1) % playlist.length; // 循环播放
+          loadTrack(currentTrack);
+      });
+
+      // 初始化播放器，加载第一首歌
+      loadTrack(currentTrack);
+  </script>
+
+
 
   <!-- 配置Docsify选项 -->
   <script>

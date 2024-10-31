@@ -6,7 +6,11 @@
 
 ### 本网站的目的是为了存储碎片化的知识，不涉及商业目的。
 
+ 
+<!--  
+<span style="color: orange;">黎瑞恩-多情</span> 
 
+[黎瑞恩-多情](/_media/黎瑞恩-多情.mp3 ':include :type=mp3') -->
 
 
 <!-- 三种变颜色的方法 -->
@@ -14,8 +18,8 @@
 <!-- <span style="color: orange;">声明</span>  -->
 <!-- <div style="color: orange;">声明</div>  -->
 
-### <span style="color: red;">下面这个是我最爱的老婆大人!!</span> 
+<!-- ### <span style="color: red;">下面这个是我最爱的老婆大人!!</span> 
 
-![alt text](_media/微信图片_20241101015028.jpg ':size=50%')
+
 
 </div>
