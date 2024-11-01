@@ -12,11 +12,62 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"> <!-- 引用Docsify的Vue风格主题CSS文件，使文档页面具有Vue主题的样式 -->
 
   <style>
-    :root {
-      --docsifytabs-border-color: #ededed;
-      --docsifytabs-tab-highlight-color: purple;
+      :root {
+        --docsifytabs-border-color: #ededed;
+        --docsifytabs-tab-highlight-color: purple;
+      }
+    </style>
+
+  <style>
+      h1 {
+      font-size: 32px !important;/* 调整为合适的大小 */
+      
     }
+
+    h2 {
+      font-size: 25px !important;
+    
+      /* margin-left: 20px !important; */
+      
+    }
+
+    h3 {
+      font-size: 22px !important;
+      /* margin-left: 30px !important; */
+    }
+    h4 {
+      font-size: 19px !important;
+    }
+  /* 如果你想调整其他标题层级，可以继续添加 */
   </style>
+
+  <style>
+    .markdown-section h1 span {
+    color:  #FFA500 !important;
+    }
+    .markdown-section h2 span {
+    color: #007bff !important;
+    } 
+    /* .markdown-section h3 span {
+    color: #0d0d0e !important;
+    } */
+
+    /* .sidebar .sidebar-nav ul li a {
+    color: #FFA500 !important; /* 橙色 */
+    }
+
+    /* .sidebar .sidebar-nav ul li ul li a {
+    color: #28A745 !important; /* 二级无序标题绿色 */
+    } */
+
+    /* /* .sidebar .sidebar-nav ul li ul li ul li a {
+    color: #007BFF !important; /* 三级无序标题蓝色 */
+    } */ 
+
+
+  </style>
+  
+
   <style>
     /* 固定播放器在顶部 */
     #music-player {
@@ -57,18 +108,18 @@
       // 定义播放列表
       const playlist = [
           
-          { title: "Kenny G - Going home", src: "/_media/Kenny G - Going home.mp3" },
-          { title: "Sweet Hearts - I've never been to me", src: "/_media/Sweet Hearts - I've never been to me.mp3" },
-          { title: "Teddy Thompson - I Don't Want To Say Goodbye", src: "/_media/Teddy Thompson - I Don't Want To Say Goodbye.mp3" },
-          { title: "Danny Elfman - Will Hunting [Main Titles]", src: "/_media/Danny Elfman - Will Hunting [Main Titles].mp3" },
-          { title: "岩井俊二 - Fish In The Pool", src: "/_media/岩井俊二 - Fish In The Pool.mp3" },
-          { title: "岩井俊二 - ウヲアイニ(我爱你)", src: "/_media/岩井俊二 - ウヲアイニ(我爱你).mp3" },
-          { title: "田中公平 - 见上げた空の爽やかさ", src: "/_media/田中公平 - 见上げた空の爽やかさ.mp3" },
-          { title: "群星 - Reason", src: "/_media/群星 - Reason.mp3" },
-          { title: "群星 - 祈祷", src: "/_media/群星 - 祈祷.mp3" },
-          { title: "情书 - 主题曲", src: "/_media/情书 - 主题曲.mp3" },
-          { title: "黎瑞恩 - 多情", src: "/_media/黎瑞恩-多情.mp3" },
-          { title: "叶倩文 - 伤逝", src: "/_media/叶倩文-伤逝.mp3" }
+          { title: "🎵 Kenny G - Going home 🎵", src: "/_media/Kenny G - Going home.mp3" },
+          { title: "🎵 Sweet Hearts - I've never been to me 🎵", src: "/_media/Sweet Hearts - I've never been to me.mp3" },
+          { title: "🎵 Teddy Thompson - I Don't Want To Say Goodbye 🎵", src: "/_media/Teddy Thompson - I Don't Want To Say Goodbye.mp3" },
+          { title: "🎵 Danny Elfman - Will Hunting [Main Titles] 🎵", src: "/_media/Danny Elfman - Will Hunting [Main Titles].mp3" },
+          { title: "🎵 岩井俊二 - Fish In The Pool 🎵", src: "/_media/岩井俊二 - Fish In The Pool.mp3" },
+          { title: "🎵 岩井俊二 - ウヲアイニ(我爱你) 🎵", src: "/_media/岩井俊二 - ウヲアイニ(我爱你).mp3" },
+          { title: "🎵 田中公平 - 见上げた空の爽やかさ 🎵", src: "/_media/田中公平 - 见上げた空の爽やかさ.mp3" },
+          { title: "🎵 群星 - Reason 🎵", src: "/_media/群星 - Reason.mp3" },
+          { title: "🎵 群星 - 祈祷 🎵", src: "/_media/群星 - 祈祷.mp3" },
+          { title: "🎵 情书 - 主题曲 🎵", src: "/_media/情书 - 主题曲.mp3" },
+          { title: "🎵 黎瑞恩 - 多情 🎵", src: "/_media/黎瑞恩-多情.mp3" },
+          { title: "🎵 叶倩文 - 伤逝 🎵", src: "/_media/叶倩文-伤逝.mp3" }
       ];
 
       let currentTrack = 0; // 当前播放的歌曲索引
@@ -101,7 +152,7 @@
       repo: '',                  // 设置项目的GitHub仓库地址，导航栏中会出现一个跳转按钮（这里为空）
       auto2top: true,
       subMaxLevel: 3,            // 指定显示的侧边栏标题层级（设置为3级）
-      maxLevel: 4,
+      maxLevel: 5,
       mergeNavbar: true,
       loadSidebar: true,         // 启用侧边栏（通常由_sidebar.md生成）
       loadNavbar: true,          // 启用顶栏（通常由_navbar.md生成）

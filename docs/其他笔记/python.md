@@ -1,6 +1,6 @@
 Python 的基础语句涵盖了变量赋值、数据类型、条件控制、循环、函数等基础知识。以下是一些常用的基础 Python 语句。
 
-### 1. 变量赋值与数据类型
+## 1. 变量赋值与数据类型
 
 Python 是动态类型语言，可以直接声明并赋值变量，常见的数据类型有 `int`、`float`、`str`、`list`、`dict`、`bool` 等。
 
@@ -22,7 +22,7 @@ numbers = [1, 2, 3, 4, 5]
 person = {"name": "Alice", "age": 25}
 ```
 
-### 2. 条件控制
+## 2. 条件控制
 
 Python 使用 `if-elif-else` 进行条件控制。
 
@@ -36,7 +36,7 @@ else:
     print("儿童")
 ```
 
-### 3. 循环
+## 3. 循环
 
 #### `for` 循环
 用于遍历列表、字符串、字典等可迭代对象。
@@ -61,7 +61,7 @@ while count < 5:
     count += 1
 ```
 
-### 4. 函数
+## 4. 函数
 
 函数通过 `def` 关键字定义。
 
@@ -72,7 +72,7 @@ def greet(name):
 print(greet("Alice"))  # 输出：Hello, Alice!
 ```
 
-### 5. 列表与字典操作
+## 5. 列表与字典操作
 
 - 列表操作：增删改查、排序等。
 - 字典操作：增删键值对、查找等。
@@ -90,7 +90,7 @@ print(person.get("name"))     # 获取键对应的值
 del person["age"]             # 删除键值对
 ```
 
-### 6. 文件操作
+## 6. 文件操作
 
 用于读写文件。
 
@@ -105,7 +105,7 @@ with open("example.txt", "r") as f:
     print(content)
 ```
 
-### 7. 异常处理
+## 7. 异常处理
 
 Python 使用 `try-except` 捕获异常，避免程序因错误而崩溃。
 
@@ -118,7 +118,7 @@ finally:
     print("执行结束")
 ```
 
-### 8. 列表解析（List Comprehensions）
+## 8. 列表解析（List Comprehensions）
 
 列表解析是 Python 中简洁地创建新列表的语法。
 
@@ -127,7 +127,7 @@ squares = [x ** 2 for x in range(10)]  # 生成 0 到 9 的平方列表
 print(squares)
 ```
 
-### 9. 类和面向对象编程（OOP）
+## 9. 类和面向对象编程（OOP）
 
 定义类和创建对象。
 
@@ -144,7 +144,7 @@ p = Person("Alice", 25)
 p.greet()  # 输出：Hello, my name is Alice and I am 25 years old.
 ```
 
-### 10. 导入模块
+## 10. 导入模块
 
 Python 拥有大量内置模块，可以使用 `import` 导入模块。
 
@@ -156,7 +156,7 @@ print(math.sqrt(16))  # 计算平方根
 
 `class` 语句用于定义一个新的类。类是 Python 面向对象编程 (OOP) 的核心，允许我们封装数据和方法。下面是 `class` 语句的结构和一些示例：
 
-### 11.class 类
+## 11.class 类
 #### a. 类的基本定义
 
 类通过 `class` 关键字定义，并包含初始化方法 `__init__`，用于初始化对象属性，还可以包含其他方法来定义对象的行为。
