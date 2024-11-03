@@ -77,7 +77,7 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
 ```
 在HTML中，可以通过不同的标签嵌入视频和文件。以下是一些常见的嵌入方法：
 
-#### 3. 嵌入视频
+#### 3. 嵌入视频和视频
 
 ##### 使用 `<video>` 标签
 可以直接在HTML中使用 `<video>` 标签嵌入本地视频或在线视频文件：
@@ -87,6 +87,13 @@ HTML（超文本标记语言）是一种用于创建网页的标记语言。HTML
   <source src="path/to/your-video.ogg" type="video/ogg"> <!-- OGG格式视频文件 -->
   您的浏览器不支持HTML视频播放。
 </video>
+
+<audio controls>
+  <source src="path/to/your-audio.mp3" type="audio/mpeg"> <!-- MP3格式的音频文件 -->
+  <source src="path/to/your-audio.ogg" type="audio/ogg"> <!-- OGG格式的音频文件 -->
+  您的浏览器不支持HTML音频播放。
+</audio>
+
 ```
 - `controls` 属性：显示播放控件（播放/暂停、音量、全屏等）。
 - `width` 属性：设置视频显示宽度。
