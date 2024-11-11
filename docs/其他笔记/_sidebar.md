@@ -1,7 +1,7 @@
 - [__首页>>__](/README.md)
 
 - 其他笔记
-
+    - [杂记](其他笔记/杂记.md)
     - [markdown相关](/其他笔记/markdown.md)
     - [html相关](/其他笔记/html.md)
     - [python基础](其他笔记/python.md)

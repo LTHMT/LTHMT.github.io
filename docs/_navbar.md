@@ -10,6 +10,7 @@
     <!-- * [商学理论](商学/README.md) -->
 
 * **<font color="dodgerblue">其他笔记</font>**
+    * [杂记](其他笔记/杂记.md)
     * [markdown相关](/其他笔记/markdown.md)
     * [html相关](/其他笔记/html.md)
     * [python相关](/其他笔记/python.md)
