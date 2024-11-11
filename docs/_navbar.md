@@ -5,7 +5,7 @@
     * [研究方法](../商业分析/1、调查方法.md)
     * [商业分析](商业分析/a、问题转变为行动.md)
 
-* **<font color="dodgerblue">消费者行动</font>**
+* **<font color="dodgerblue">消费者心理</font>**
     * [心理学](心理学/1学习和记忆.md)
     <!-- * [商学理论](商学/README.md) -->
 
