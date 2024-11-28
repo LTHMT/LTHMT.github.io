@@ -85,10 +85,10 @@
         position: fixed;
         bottom: 0;
         right: 10px;
-        width: 14%;
+        width: 12%;
         background: #f3f3f3af;
-        padding: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        padding: 6px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         z-index: 9999;
     }
     /* 为了避免播放器遮挡内容，增加页面顶部内边距 */
@@ -104,55 +104,217 @@
 </head>
 
 <body>
+
   <div id="app"></div> <!-- 页面内容容器，通过Docsify渲染文档内容 -->
 
   <!-- 页面音乐播放器 -->
-  <div id="music-player">
-      <span id="song-title">黎瑞恩 - 多情</span> <!-- 歌名显示 -->
-      <audio id="audio-player" controls>        <!--<audio id="audio-player" controls autoplay（默认自动播放） ></audio>-->
+  <div id="music-player" style="display: none; style= padding: 10px; border: 1px solid #ddd; max-width: 500px; margin: 20px auto; text-align: center; background-color: rgba(255, 255, 255, 0.7); border-radius: 10px; ">
+      <!-- 关闭按钮 -->
+      <button id="close-player-button" style="position: absolute; top: 3px; right: 7px; padding: 0.2px 8px; font-size: 1px;color: rgb(121, 116, 116)">-</button>
+
+      <span id="song-title" style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 10px;">黎瑞恩 - 多情</span>
+      <audio id="audio-player" controls style="width: 100%;">
           <source src="/_media/黎瑞恩-多情.mp3" type="audio/mpeg">
           您的浏览器不支持音频元素。
       </audio>
+      <div style="margin: 10px 0;">
+        <button id="prev-button" style="background-color: rgba(0, 0, 0, 0.1); color: rgba(0, 0, 0, 0.5); border: none; border-radius: 4px; padding: 4px;font-size: 11px">上一曲</button>
+        <button id="next-button" style="background-color: rgba(0, 0, 0, 0.1); color: rgba(0, 0, 0, 0.5); border: none; border-radius: 4px; padding: 4px;font-size: 11px">下一曲</button>
+        <button id="random-button"style="background-color: rgba(0, 0, 0, 0.1); color: rgba(0, 0, 0, 0.5); border: none; border-radius: 4px; padding: 4px;font-size: 11px">随机播放</button>
+        <button id="sequential-button"style="background-color: rgba(0, 0, 0, 0.1); color: rgba(0, 0, 0, 0.5); border: none; border-radius: 4px; padding: 4px;font-size: 11px">顺序播放</button>
+        <button id="playlist-button"style="background-color: rgba(0, 0, 0, 0.1); color: rgba(0, 0, 0, 0.5); border: none; border-radius: 4px; padding: 4px;font-size: 11px">显示播放列表</button>
+      </div>
+      <!-- 播放列表区域 -->
+      <ul id="playlist" style="display: none; border: 1px solid #ddd; padding: 10px; max-width: 100%; list-style: none; margin-top: 10px; text-align: left;">
+          <!-- 动态生成播放列表 -->
+      </ul>
+  </div>
+  <!-- 小标签，用于显示播放器 -->
+  <div id="show-label" style=" position: fixed; bottom: 20px; right: 20px; background-color: #3333334e; color: #ffffffe1; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+    🎵
   </div>
 
   <script>
       // 定义播放列表
       const playlist = [
-          
-          { title: "🎵 Kenny G - Going home 🎵", src: "/_media/Kenny G - Going home.mp3" },
-          { title: "🎵Sweet Hearts - I've never been to me", src: "/_media/Sweet Hearts - I've never been to me.mp3" },
-          { title: "🎵 Teddy Thompson - I Don't Want To Say Goodbye 🎵", src: "/_media/Teddy Thompson - I Don't Want To Say Goodbye.mp3" },
-          { title: "🎵 Danny Elfman - Will Hunting [Main Titles] 🎵", src: "/_media/Danny Elfman - Will Hunting [Main Titles].mp3" },
-          { title: "🎵 岩井俊二 - Fish In The Pool 🎵", src: "/_media/岩井俊二 - Fish In The Pool.mp3" },
-          { title: "🎵 岩井俊二 - ウヲアイニ(我爱你) 🎵", src: "/_media/岩井俊二 - ウヲアイニ(我爱你).mp3" },
-          { title: "🎵 田中公平 - 见上げた空の爽やかさ 🎵", src: "/_media/田中公平 - 见上げた空の爽やかさ.mp3" },
-          { title: "🎵 群星 - Reason 🎵", src: "/_media/群星 - Reason.mp3" },
-          { title: "🎵 群星 - 祈祷 🎵", src: "/_media/群星 - 祈祷.mp3" },
-          { title: "🎵 情书 - 主题曲 🎵", src: "/_media/情书 - 主题曲.mp3" },
-          { title: "🎵 黎瑞恩 - 多情 🎵", src: "/_media/黎瑞恩-多情.mp3" },
-          { title: "🎵 叶倩文 - 伤逝 🎵", src: "/_media/叶倩文-伤逝.mp3" }
+          { title: "🎵 Kenny G - Going home ", src: "/_media/Kenny G - Going home.mp3" },
+          { title: "🎵 Sweet Hearts - I've never been to me ", src: "/_media/Sweet Hearts - I've never been to me.mp3" },
+          { title: "🎵 Teddy Thompson - I Don't Want To Say Goodbye ", src: "/_media/Teddy Thompson - I Don't Want To Say Goodbye.mp3" },
+          { title: "🎵 Danny Elfman - Will Hunting [Main Titles] ", src: "/_media/Danny Elfman - Will Hunting [Main Titles].mp3" },
+          { title: "🎵 岩井俊二 - Fish In The Pool ", src: "/_media/岩井俊二 - Fish In The Pool.mp3" },
+          { title: "🎵 岩井俊二 - ウヲアイニ(我爱你) ", src: "/_media/岩井俊二 - ウヲアイニ(我爱你).mp3" },
+          { title: "🎵 田中公平 - 见上げた空の爽やかさ ", src: "/_media/田中公平 - 见上げた空の爽やかさ.mp3" },
+          { title: "🎵 群星 - Reason ", src: "/_media/群星 - Reason.mp3" },
+          { title: "🎵 群星 - 祈祷 ", src: "/_media/群星 - 祈祷.mp3" },
+          { title: "🎵 情书 - 主题曲 ", src: "/_media/情书 - 主题曲.mp3" },
+          { title: "🎵 黎瑞恩 - 多情 ", src: "/_media/黎瑞恩-多情.mp3" },
+          { title: "🎵 叶倩文 - 伤逝 ", src: "/_media/叶倩文-伤逝.mp3" }
       ];
 
-      let currentTrack = 0; // 当前播放的歌曲索引
+      // 初始化播放器状态
+      let currentIndex = 0; // 当前播放曲目索引
+      let isSequentialPlay = false; // 顺序播放状态
+      let isRandomPlay = false; // 随机播放状态
+
       const audioPlayer = document.getElementById("audio-player");
       const songTitle = document.getElementById("song-title");
+      const prevButton = document.getElementById("prev-button");
+      const nextButton = document.getElementById("next-button");
+      const randomButton = document.getElementById("random-button");
+      const sequentialButton = document.getElementById("sequential-button");
+      const playlistButton = document.getElementById("playlist-button");
+      const playlistElement = document.getElementById("playlist");
+      const closePlayerButton = document.getElementById("close-player-button");
+      const showLabel = document.getElementById("show-label");
+      const musicPlayer = document.getElementById("music-player");
 
-      // 更新音频源和标题
-      function loadTrack(index) {
-          audioPlayer.src = playlist[index].src;
-          songTitle.textContent = playlist[index].title;
+      // 保存和恢复播放状态
+      function savePlayerState() {
+          const state = {
+              currentIndex,
+              currentTime: audioPlayer.currentTime,
+              isSequentialPlay,
+              isRandomPlay
+          };
+          localStorage.setItem("playerState", JSON.stringify(state));
+      }
+
+      function loadPlayerState() {
+          const state = JSON.parse(localStorage.getItem("playerState"));
+          if (state) {
+              currentIndex = state.currentIndex || 0;
+              isSequentialPlay = state.isSequentialPlay || false;
+              isRandomPlay = state.isRandomPlay || false;
+              updatePlayer(currentIndex);
+              audioPlayer.currentTime = state.currentTime || 0; // 恢复播放时间
+              updatePlayMode(); // 恢复播放模式状态
+          }
+      }
+
+      // 更新播放器内容
+      function updatePlayer(index) {
+          const selectedSong = playlist[index];
+          audioPlayer.src = selectedSong.src;
+          songTitle.textContent = selectedSong.title;
           audioPlayer.play();
       }
 
-      // 监听歌曲结束事件，切换到下一首歌
-      audioPlayer.addEventListener("ended", () => {
-          currentTrack = (currentTrack + 1) % playlist.length; // 循环播放
-          loadTrack(currentTrack);
+      // 隐藏播放器并显示小标签
+      function hideMusicPlayer() {
+          musicPlayer.style.display = "none";
+          showLabel.style.display = "block";
+      }
+
+      // 显示播放器并隐藏小标签
+      function showMusicPlayer() {
+          musicPlayer.style.display = "block";
+          showLabel.style.display = "none";
+      }
+
+      // 上一曲功能
+      function playPrevSong() {
+          currentIndex = (currentIndex - 1 + playlist.length) % playlist.length; // 循环到最后一首
+          updatePlayer(currentIndex);
+      }
+
+      // 下一曲功能
+      function playNextSong() {
+          currentIndex = (currentIndex + 1) % playlist.length; // 循环到第一首
+          updatePlayer(currentIndex);
+      }
+
+      // 随机播放功能
+      function toggleRandomPlay() {
+          isRandomPlay = !isRandomPlay; // 切换随机播放状态
+          randomButton.textContent = isRandomPlay ? "随机播放中" : "随机播放"; // 更新按钮文字
+          if (isRandomPlay) {
+              isSequentialPlay = false; // 禁用顺序播放
+              sequentialButton.textContent = "顺序播放";
+              audioPlayer.addEventListener("ended", playRandomSong); // 启用随机播放
+          } else {
+              audioPlayer.removeEventListener("ended", playRandomSong); // 取消随机播放
+          }
+      }
+
+      // 顺序播放功能
+      function toggleSequentialPlay() {
+          isSequentialPlay = !isSequentialPlay; // 切换顺序播放状态
+          sequentialButton.textContent = isSequentialPlay ? "顺序播放中" : "顺序播放"; // 更新按钮文字
+          if (isSequentialPlay) {
+              isRandomPlay = false; // 禁用随机播放
+              randomButton.textContent = "随机播放";
+              audioPlayer.addEventListener("ended", playNextSong); // 启用顺序播放
+          } else {
+              audioPlayer.removeEventListener("ended", playNextSong); // 取消顺序播放
+          }
+      }
+
+      // 根据当前播放模式更新事件绑定
+      function updatePlayMode() {
+          if (isSequentialPlay) {
+              audioPlayer.removeEventListener("ended", playRandomSong);
+              audioPlayer.addEventListener("ended", playNextSong);
+              sequentialButton.textContent = "顺序播放中";
+          } else if (isRandomPlay) {
+              audioPlayer.removeEventListener("ended", playNextSong);
+              audioPlayer.addEventListener("ended", playRandomSong);
+              randomButton.textContent = "随机播放中";
+          }
+      }
+
+      // 播放列表显示与隐藏
+      function togglePlaylist() {
+          const isHidden = playlistElement.style.display === "none" || playlistElement.style.display === "";
+          playlistElement.style.display = isHidden ? "block" : "none";
+          playlistButton.textContent = isHidden ? "隐藏播放列表" : "显示播放列表"; // 动态更新按钮文字
+      }
+
+      // 随机播放逻辑
+      function playRandomSong() {
+          currentIndex = Math.floor(Math.random() * playlist.length);
+          updatePlayer(currentIndex);
+      }
+
+      // 生成播放列表
+      function generatePlaylist() {
+          playlistElement.innerHTML = ""; // 清空列表
+          playlist.forEach((song, index) => {
+              const listItem = document.createElement("li");
+              listItem.textContent = song.title;
+              listItem.style.cursor = "pointer";
+              listItem.style.padding = "5px 0";
+              listItem.addEventListener("click", () => {
+                  currentIndex = index;
+                  updatePlayer(currentIndex); // 播放选中的歌曲
+              });
+              playlistElement.appendChild(listItem);
+          });
+      }
+
+      // 初始化事件监听器
+      prevButton.addEventListener("click", playPrevSong);
+      nextButton.addEventListener("click", playNextSong);
+      randomButton.addEventListener("click", toggleRandomPlay);
+      sequentialButton.addEventListener("click", toggleSequentialPlay);
+      playlistButton.addEventListener("click", togglePlaylist);
+      closePlayerButton.addEventListener("click", hideMusicPlayer);
+      showLabel.addEventListener("click", showMusicPlayer);
+      audioPlayer.addEventListener("timeupdate", savePlayerState);
+
+      // 页面加载时恢复状态
+      window.addEventListener("load", () => {
+          loadPlayerState(); // 恢复播放状态
+          generatePlaylist(); // 初始化播放列表
       });
 
-      // 初始化播放器，加载第一首歌
-      loadTrack(currentTrack);
+      // 页面离开时保存状态
+      window.addEventListener("beforeunload", savePlayerState);
+
   </script>
+
+
+
+
 
 
 
