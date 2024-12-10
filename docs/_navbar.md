@@ -17,6 +17,7 @@
     * [正则表达式](/其他笔记/正则表达式)
     * [爬虫相关](/其他笔记/爬虫基础.md)
     * [scrapy爬虫基础](其他笔记/scrapy爬虫基础.md)
+    * [jupyter notebook](其他笔记/jupyter_notebook.md)
 
 
     
