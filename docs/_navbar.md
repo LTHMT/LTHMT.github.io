@@ -1,6 +1,6 @@
 
 * [**<font color="dodgerblue">首页</font>**](README.md)
-* [**<font color="orange">简历</font>**](/简历/profile.md)
+* [**<font color="orange">简历</font>**](/resume/cv.md)
 
 * **<font color="dodgerblue">商业分析</font>**
     * [研究方法](../商业分析/1、调查方法.md)

@@ -45,13 +45,13 @@
 
 ## 技能
 
-
+</div>
 
 **日语**: 熟练（日语能力测试N1级）  
 **英语**: 良好（托福88分）  
 **数据分析工具**: 掌握Excel、SPSS、AMOS、Python等  
 **统计基础**: 能够独立进行数据分析与研究  
-</div>
+
 
 <div style="text-align: center;">
 
